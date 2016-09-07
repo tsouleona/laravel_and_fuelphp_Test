@@ -8,19 +8,13 @@ class Controller_Pinball extends Controller
     {
         return View::forge('pinball');
     }
-    public function game()
+    public function action_game()
     {
         $results = Game::get_Total();
-        $ball['number'] = $results;
-        return View::forge('pinball', $ball);
+//        Game::insert_gamePinball($results);
+//        $final = Game::select_AllPinball();
+        $data['ans'] = $results;
+        return View::forge('pinball_ans', $data);
     }
 
-    public function get_Total()
-    {
-
-    }
-    public function get_Ans()
-    {
-        $row = Game::get_random();
-    }
 }

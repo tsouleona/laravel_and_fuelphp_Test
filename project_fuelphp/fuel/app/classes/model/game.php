@@ -2,6 +2,8 @@
 
 namespace Model;
 
+date_default_timezone_set('America/New_York');
+
 class Game extends \Model
 {
     public static function get_Total()
@@ -23,6 +25,70 @@ class Game extends \Model
                 break;
         }
 
+    }
+
+    public static function insert_gamePinball($array)
+    {
+        $countmilk = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $countball = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        if (count($array) == 11 || count($array) == 14) {
+            $countmilk[$array[0]] = $countmilk[$array[0]] + 1;
+            $countmilk[$array[1]] = $countmilk[$array[1]] + 1;
+            for ($i = 2; $i < count($array); $i++) {
+                $countball[$array[$i]] = $countball[$array[$i]] + 1 ;
+            }
+        }
+        else{
+            $countmilk[$array[0]] = $countmilk[$array[0]] + 1;
+            for ($i = 1; $i < count($array); $i++) {
+                $countball[$array[$i]] = $countball[$array[$i]] + 1 ;
+            }
+        }
+
+        $ans_id = Game::select_SpecPinball();
+
+        DB::insert('ans')->columns(array(
+            'ans_id',
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+            'nine',
+            'ten'
+        ))->values(array(
+            $ans_id,
+            $countmilk[0].'/'.$countball[0],
+            $countmilk[1].'/'.$countball[1],
+            $countmilk[2].'/'.$countball[2],
+            $countmilk[3].'/'.$countball[3],
+            $countmilk[4].'/'.$countball[5],
+            $countmilk[5].'/'.$countball[5],
+            $countmilk[6].'/'.$countball[6],
+            $countmilk[7].'/'.$countball[7],
+            $countmilk[8].'/'.$countball[8],
+            $countmilk[9].'/'.$countball[9],
+        ))->execute();
+    }
+    public static function select_AllPinball()
+    {
+        $result = DB::query('SELECT * FROM `ans` WHERE `ans_id` = (SELECT MAX(`ans_id`) FROM `ans`)')->execute()->as_array();
+
+        return $result;
+    }
+    public static function select_SpecPinball()
+    {
+        $date = date("Ymd");
+        $result = DB::query('SELECT `record_id` FROM `ans` WHERE `ans_id` LIKE ' . "'" . '%' . $date . '%' . "'" . ' ORDER BY `ans_id` DESC')->execute();
+        if ($result[0]['record_id'] == null) {
+            return $date . "001";
+        }
+        $id = (int)$result[0]['record_id'];
+        $final = $id + 1;
+        return $final;
     }
 
     public static function get_random($number)
@@ -47,8 +113,8 @@ class Game extends \Model
         }
         $check_ans = [];
         $check_ans = array_count_values($ans);
-        foreach($check_ans as $key => $value){
-            if($value >= 6){
+        foreach ($check_ans as $key => $value) {
+            if ($value >= 6) {
                 Game::get_random($number);
             }
 
