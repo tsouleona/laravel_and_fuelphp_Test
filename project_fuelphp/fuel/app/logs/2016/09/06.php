@@ -533,3 +533,4 @@ WARNING - 2016-09-06 17:37:12 --> Fuel\Core\Fuel::init - The configured locale e
 ERROR - 2016-09-06 17:37:12 --> Fatal Error - Call to undefined method Fuel\Core\Database_Query_Builder_Insert::colums() in /var/www/html/project_fuelphp/fuel/app/classes/model/record.php on line 18
 WARNING - 2016-09-06 17:50:03 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
 WARNING - 2016-09-06 17:50:08 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+WARNING - 2016-09-06 18:09:25 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.

@@ -3,14 +3,15 @@ use \Model\Record;
 
 class Controller_record extends Controller
 {
-    public function action_get_record()
+    public function action_getRecord()
     {
-        $op = Record::insert_Record($_POST);
+        $op = Record::insertRecord($_POST);
 
         if($op)
         {
-            $result = Record::select_All_Record();
-            return View::forge('pinball',$result);
+            $data = array();
+            $data['total'] = Record::selectAllRecord();
+            return View::forge('pinball_rows',$data);
         }
     }
 }

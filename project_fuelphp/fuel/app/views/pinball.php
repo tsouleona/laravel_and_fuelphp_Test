@@ -12,81 +12,73 @@
             <div class="row">
                 <table class="table table-bordered">
                     <thead>
-                    <th>[1] 牛奶球在哪？</th>
+                    <th>[1] 1-5球道 猜牛奶球在哪？</th>
                     </thead>
+
                     <tr>
-                        <td>球道：<input id="milk_number" type="number" min="1" max="10" step="1" /></td>
-                        <td>下注：<input id="milk_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php for($i=1;$i<6;$i++){?>
+                            <td>第<?php echo $i;?>道 下注：<input id="milk_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
                     </tr>
 
                 </table>
             </div>
             <div class="row">
                 <table class="table table-bordered">
-                    <thead>
-
-                    <th>[2-1] 1-5 球道的球數是單還是雙？</th>
-
-                    </thead>
-                    <thead>
                     <tr>
-                        <th>第1道</th>
-                        <th>第2道</th>
-                        <th>第3道</th>
-                        <th>第4道</th>
-                        <th>第5道</th>
+                        <?php for($i=6;$i<11;$i++){?>
+                            <td>第<?php echo $i;?>道 下注：<input id="milk_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
                     </tr>
-                    </thead>
-                    <tr>
-                        <td>第1道 單 價錢：<input id="one_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第2道 單 價錢：<input id="two_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第3道 單 價錢：<input id="three_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第4道 單 價錢：<input id="four_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第5道 單 價錢：<input id="five_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
 
-                    </tr>
-                    <tr>
-                        <td>第1道 雙 價錢：<input id="one_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第2道 雙 價錢：<input id="two_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第3道 雙 價錢：<input id="three_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第4道 雙 價錢：<input id="four_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第5道 雙 價錢：<input id="five_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                    </tr>
                 </table>
             </div>
+<!--            -----------------------------------單數區---------------------------------------------->
             <div class="row">
                 <table class="table table-bordered">
                     <thead>
 
-                    <th>[2-2] 6-10 球道的球數是單還是雙？</th>
+                    <th>[2]球道的球數是單還是雙？</th>
 
                     </thead>
                     <thead>
                     <tr>
-                        <th>第6道</th>
-                        <th>第7道</th>
-                        <th>第8道</th>
-                        <th>第9道</th>
-                        <th>第10道</th>
+                        <th>單數區</th>
                     </tr>
                     </thead>
                     <tr>
-                        <td>第6道 單 價錢：<input id="six_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第7道 單 價錢：<input id="seven_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第8道 單 價錢：<input id="eight_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第9道 單 價錢：<input id="nine_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第10道 單 價錢：<input id="ten_odd_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-
+                        <?php for($i=1;$i<6;$i++){?>
+                            <td>第<?php echo $i;?>道 單 下注：<input id="odd_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
                     </tr>
                     <tr>
-                        <td>第6道 雙 價錢：<input id="six_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第7道 雙 價錢：<input id="seven_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第8道 雙 價錢：<input id="eight_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第9道 雙 價錢：<input id="nine_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>第10道 雙 價錢：<input id="ten_even_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php for($i=6;$i<11;$i++){?>
+                            <td>第<?php echo $i;?>道 單 下注：<input id="odd_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
                     </tr>
                 </table>
             </div>
+<!--            -----------------------------------雙數區---------------------------------------------->
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>雙數區</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <?php for($i=1;$i<6;$i++){?>
+                            <td>第<?php echo $i;?>道 雙 下注：<input id="even_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
+                    </tr>
+                    <tr>
+                        <?php for($i=6;$i<11;$i++){?>
+                            <td>第<?php echo $i;?>道 雙 下注：<input id="even_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
+                    </tr>
+                </table>
+            </div>
+<!--            -----------------------------------連續區---------------------------------------------->
             <div class="row">
                 <table class="table table-bordered">
                     <thead>
@@ -106,14 +98,9 @@
                     </tr>
                     </thead>
                     <tr>
-                        <td>價錢：<input id="1234_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>價錢：<input id="2345_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>價錢：<input id="3456_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>價錢：<input id="4567_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>價錢：<input id="5678_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>價錢：<input id="6789_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-                        <td>價錢：<input id="78910_money" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
-
+                        <?php for($i=1;$i<8;$i++){?>
+                            <td>下注：<input id="continue_money<?php echo $i;?>" type="number" min="1000" max="1000000" step="1000" value="0"/></td>
+                        <?php }?>
                     </tr>
 
                 </table>
@@ -157,45 +144,74 @@
 //                    }
 //                });
                 $("#go").on("click",function(){
-                    $.ajax({
-                       url:'<?php echo Uri::create('record/getRecord'); ?>',
-                       type:'POST',
-                       data:{
-                           milk_number:$("#milk_number").val(),
-                           milk_money:$("#milk_money").val(),
-                           one_odd_money:$("#one_odd_money").val(),
-                           two_odd_money:$("#two_odd_money").val(),
-                           three_odd_money:$("#three_odd_money").val(),
-                           four_odd_money:$("#four_odd_money").val(),
-                           five_odd_money:$("#five_odd_money").val(),
-                           one_even_money:$("#one_even_money").val(),
-                           two_even_money:$("#two_even_money").val(),
-                           three_even_money:$("#three_even_money").val(),
-                           four_even_money:$("#four_even_money").val(),
-                           five_even_money:$("#five_even_money").val(),
-                           six_odd_money:$("#six_odd_money").val(),
-                           seven_odd_money:$("#seven_odd_money").val(),
-                           eight_odd_money:$("#eight_odd_money").val(),
-                           nine_odd_money:$("#nine_odd_money").val(),
-                           ten_odd_money:$("#ten_odd_money").val(),
-                           six_even_money:$("#six_even_money").val(),
-                           seven_even_money:$("#seven_even_money").val(),
-                           eight_even_money:$("#eight_even_money").val(),
-                           nine_even_money:$("#nine_even_money").val(),
-                           ten_even_money:$("#ten_even_money").val(),
-                           money1:$("#1234_money").val(),
-                           money2:$("#2345_money").val(),
-                           money3:$("#3456_money").val(),
-                           money4:$("#4567_money").val(),
-                           money5:$("#5678_money").val(),
-                           money6:$("#6789_money").val(),
-                           money7:$("#78910_money").val()
-                       },
-                       datatype:'html',
-                        success:function(data){
-                            $("#record").html(data);
-                        }
-                    });
+                    if($("#milk_money1").val()=='0' && $("#milk_money2").val()=='0' &&  $("#milk_money3").val()=='0' &&
+                        $("#milk_money4").val()=='0' && $("#milk_money5").val()=='0' && $("#milk_money6").val()=='0' &&
+                        $("#milk_money7").val()=='0' && $("#milk_money8").val()=='0' && $("#milk_money9").val()=='0' &&
+                        $("#milk_money10").val()=='0' && $("#odd_money1").val()=='0' && $("#odd_money2").val()=='0' &&
+                        $("#odd_money3").val()=='0' && $("#odd_money4").val()=='0' && $("#odd_money5").val()=='0' &&
+                        $("#odd_money6").val()=='0' && $("#odd_money7").val()=='0' && $("#odd_money8").val()=='0' &&
+                        $("#odd_money9").val()=='0' && $("#odd_money10").val()=='0' && $("#even_money1").val()=='0' &&
+                        $("#even_money2").val()=='0' && $("#even_money3").val()=='0' && $("#even_money4").val()=='0' &&
+                        $("#even_money5").val()=='0' && $("#even_money6").val()=='0' && $("#even_money7").val()=='0' &&
+                        $("#even_money8").val()=='0' && $("#even_money9").val()=='0' && $("#even_money10").val()=='0' &&
+                        $("#continue_money1").val()=='0' && $("#continue_money2").val()=='0' && $("#continue_money3").val()=='0' &&
+                        $("#continue_money4").val()=='0' && $("#continue_money5").val()=='0' && $("#continue_money6").val()=='0' &&
+                        $("#continue_money7").val()=='0')
+                    {
+                        $("#record").html('<h3 style="color:red"><strong>未下任何注!!!</strong><h3>');
+                    }
+                    else
+                    {
+                        document.getElementById("go").disabled = true;
+                        $.ajax({
+                            url:'<?php echo Uri::create('record/getRecord'); ?>',
+                            type:'POST',
+                            data:{
+                                milk_money1:$("#milk_money1").val(),
+                                milk_money2:$("#milk_money2").val(),
+                                milk_money3:$("#milk_money3").val(),
+                                milk_money4:$("#milk_money4").val(),
+                                milk_money5:$("#milk_money5").val(),
+                                milk_money6:$("#milk_money6").val(),
+                                milk_money7:$("#milk_money7").val(),
+                                milk_money8:$("#milk_money8").val(),
+                                milk_money9:$("#milk_money9").val(),
+                                milk_money10:$("#milk_money10").val(),
+                                odd_money1:$("#odd_money1").val(),
+                                odd_money2:$("#odd_money2").val(),
+                                odd_money3:$("#odd_money3").val(),
+                                odd_money4:$("#odd_money4").val(),
+                                odd_money5:$("#odd_money5").val(),
+                                even_money1:$("#even_money1").val(),
+                                even_money2:$("#even_money2").val(),
+                                even_money3:$("#even_money3").val(),
+                                even_money4:$("#even_money4").val(),
+                                even_money5:$("#even_money5").val(),
+                                odd_money6:$("#odd_money6").val(),
+                                odd_money7:$("#odd_money7").val(),
+                                odd_money8:$("#odd_money8").val(),
+                                odd_money9:$("#odd_money9").val(),
+                                odd_money10:$("#odd_money10").val(),
+                                even_money6:$("#even_money6").val(),
+                                even_money7:$("#even_money7").val(),
+                                even_money8:$("#even_money8").val(),
+                                even_money9:$("#even_money9").val(),
+                                even_money10:$("#even_money10").val(),
+                                continue_money1:$("#continue_money1").val(),
+                                continue_money2:$("#continue_money2").val(),
+                                continue_money3:$("#continue_money3").val(),
+                                continue_money4:$("#continue_money4").val(),
+                                continue_money5:$("#continue_money5").val(),
+                                continue_money6:$("#continue_money6").val(),
+                                continue_money7:$("#continue_money7").val()
+                            },
+                            datatype:'html',
+                            success:function(data){
+                                $("#record").html(data);
+                            }
+                        });
+                    }
+
                 });
             </script>
             <br>
