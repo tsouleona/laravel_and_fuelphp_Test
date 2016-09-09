@@ -13,13 +13,14 @@ class Record extends \Model
     {
 
         $datetime = date("Y-m-d h:i:s");
-        $record_id = Record::select_SpecRecord();
-
+        $record_id = Record::select_NewAnsId();
+        $username = \Session::get('username');
         for ($i = 1; $i < 11; $i++) {
             if ($data["milk_money{$i}"] != '0') {
                 $odds = Record::compute_Milk($i);
                 DB::insert('record')->columns(array(
                     'record_id',
+                    'username',
                     'play_type',
                     'input',
                     'bet_money',
@@ -28,6 +29,7 @@ class Record extends \Model
                     'update_time'
                 ))->values(array(
                     $record_id,
+                    $username,
                     "milk",
                     $i,
                     $data["milk_money{$i}"],
@@ -42,6 +44,7 @@ class Record extends \Model
                 $odds = Record::compute_OddEven();
                 DB::insert('record')->columns(array(
                     'record_id',
+                    'username',
                     'play_type',
                     'input',
                     'bet_money',
@@ -50,6 +53,7 @@ class Record extends \Model
                     'update_time'
                 ))->values(array(
                     $record_id,
+                    $username,
                     "odd",
                     $i,
                     $data["odd_money{$i}"],
@@ -64,6 +68,7 @@ class Record extends \Model
                 $odds = Record::compute_OddEven();
                 DB::insert('record')->columns(array(
                     'record_id',
+                    'username',
                     'play_type',
                     'input',
                     'bet_money',
@@ -72,6 +77,7 @@ class Record extends \Model
                     'update_time'
                 ))->values(array(
                     $record_id,
+                    $username,
                     "even",
                     $i,
                     $data["even_money{$i}"],
@@ -86,6 +92,7 @@ class Record extends \Model
                 $odds = Record::compute_ContinueBall($i);
                 DB::insert('record')->columns(array(
                     'record_id',
+                    'username',
                     'play_type',
                     'input',
                     'bet_money',
@@ -94,6 +101,7 @@ class Record extends \Model
                     'update_time'
                 ))->values(array(
                     $record_id,
+                    $username,
                     "continue_ball",
                     $i,
                     $data["continue_money{$i}"],
@@ -109,8 +117,6 @@ class Record extends \Model
 
     public static function compute_Milk($balltruck)
     {
-
-
         $pro = Config::get("hole.{$balltruck}");
 
         $tmp = 1/$pro * 0.92;
@@ -134,21 +140,16 @@ class Record extends \Model
         $final = number_format($tmp, 2);
         return $final;
     }
-    public static function select_SpecRecord()
+    public static function select_NewAnsId()
     {
-        $date = date("Ymd");
-        $result = DB::query('SELECT `record_id` FROM `record` WHERE `record_id` LIKE ' . "'" . '%' . $date . '%' . "'" . ' ORDER BY `record_id` DESC')->execute();
-        if ($result[0]['record_id'] == null) {
-            return $date . "001";
-        }
-        $id = (int)$result[0]['record_id'];
-        $final = $id + 1;
-        return $final;
+        $result = DB::query('SELECT MAX(`ans_id`) FROM `ans`')->execute();
+        return $result[0]["MAX(`ans_id`)"];
     }
 
     public static function selectAllRecord()
     {
-        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = (SELECT MAX(`record_id`) FROM `record`)')->execute()->as_array();
+        $username = \Session::get('username');
+        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = (SELECT MAX(`record_id`) FROM `record`) AND `username` = '."'".$username."'")->execute()->as_array();
         return $result;
     }
 

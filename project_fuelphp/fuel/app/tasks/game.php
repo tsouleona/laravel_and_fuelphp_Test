@@ -4,7 +4,6 @@
     date_default_timezone_set('America/New_York');
     class Game
     {
-
         public function game()
         {
             $result = Game::get_Total();
@@ -67,7 +66,7 @@
             }
 
             $ans_id = Game::select_SpecPinball();
-
+            $date = date("Y-m-d H:i:s");
             DB::insert('ans')->columns(array(
                 'ans_id',
                 'ball_total',
@@ -81,7 +80,8 @@
                 '7',
                 '8',
                 '9',
-                '10'
+                '10',
+                'create_time'
             ))->values(array(
                 $ans_id,
                 $count,
@@ -95,7 +95,8 @@
                 $countball[7].'/'.$countmilk[7],
                 $countball[8].'/'.$countmilk[8],
                 $countball[9].'/'.$countmilk[9],
-                $countball[10].'/'.$countmilk[10]
+                $countball[10].'/'.$countmilk[10],
+                $date
             ))->execute();
         }
         public static function select_AllPinball()

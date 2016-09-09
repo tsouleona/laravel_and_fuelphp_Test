@@ -10,10 +10,11 @@ class Controller_index extends Controller
     }
     public function action_login()
     {
-       $op = User::login($_POST);
-        if($op)
+       $balance = User::login($_POST);
+        if($balance != null)
         {
-            return View::forge('pinball');
+            $data['balance'] = $balance;
+            return View::forge('pinball', $data);
         }
         return View::forge('login');
     }

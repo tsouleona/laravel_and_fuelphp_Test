@@ -21,83 +21,7 @@
     <favorites_list name="project_fuelphp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fuel/app/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7636364">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pinball.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/pinball.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.259259">
-              <caret line="16" column="49" selection-start-line="12" selection-start-column="7" selection-end-line="16" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-131.59259">
-              <caret line="187" column="34" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
-              <folding>
-                <marker date="1473327927452" expanded="true" signature="3178:3248" placeholder="SELECT `reco... ans" />
-                <marker date="1473327927452" expanded="true" signature="3216:3247" placeholder="SELECT MAX(`... ans" />
-                <marker date="1473327927452" expanded="true" signature="3442:3549" placeholder="SELECT `reco... ans" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fuel/app/tasks/game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5">
-              <caret line="97" column="49" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
-              <folding>
-                <marker date="1473327957833" expanded="true" signature="3144:3214" placeholder="SELECT * FRO... ans" />
-                <marker date="1473327957833" expanded="true" signature="3182:3213" placeholder="SELECT MAX(`... ans" />
-                <marker date="1473327957833" expanded="true" signature="3408:3515" placeholder="SELECT `ans_... ans" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pinball.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-36.592594">
-              <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1473324548953" expanded="true" signature="7653:7662" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fuel/app/views/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.703703">
-              <caret line="28" column="53" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -108,20 +32,26 @@
         <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/fuel/app/config/development/db.php" />
         <option value="$PROJECT_DIR$/fuel/app/config/db.php" />
-        <option value="$PROJECT_DIR$/fuel/app/classes/controller/record.php" />
-        <option value="$PROJECT_DIR$/fuel/app/views/pinball_rows.php" />
         <option value="$PROJECT_DIR$/fuel/app/config/config.php" />
         <option value="$PROJECT_DIR$/fuel/core/config/config.php" />
-        <option value="$PROJECT_DIR$/fuel/app/classes/model/record.php" />
-        <option value="$PROJECT_DIR$/fuel/app/views/pinball_ans.php" />
         <option value="$PROJECT_DIR$/fuel/app/views/login.php" />
+        <option value="$PROJECT_DIR$/fuel/app/tasks/compareAns.php" />
+        <option value="$PROJECT_DIR$/fuel/app/tasks/game.php" />
+        <option value="$PROJECT_DIR$/fuel/app/tasks/compare_ans.php" />
         <option value="$PROJECT_DIR$/fuel/app/classes/model/user.php" />
         <option value="$PROJECT_DIR$/fuel/app/classes/controller/index.php" />
-        <option value="$PROJECT_DIR$/fuel/app/classes/controller/pinball.php" />
-        <option value="$PROJECT_DIR$/fuel/app/config/routes.php" />
-        <option value="$PROJECT_DIR$/fuel/app/views/pinball.php" />
+        <option value="$PROJECT_DIR$/fuel/app/views/pinball_compare.php" />
+        <option value="$PROJECT_DIR$/fuel/app/classes/model/compareMoney.php" />
         <option value="$PROJECT_DIR$/fuel/app/classes/model/game.php" />
-        <option value="$PROJECT_DIR$/fuel/app/tasks/game.php" />
+        <option value="$PROJECT_DIR$/fuel/app/classes/controller/pinball.php" />
+        <option value="$PROJECT_DIR$/fuel/app/views/pinball_ans.php" />
+        <option value="$PROJECT_DIR$/fuel/app/classes/controller/compare.php" />
+        <option value="$PROJECT_DIR$/fuel/app/classes/controller/record.php" />
+        <option value="$PROJECT_DIR$/fuel/app/config/routes.php" />
+        <option value="$PROJECT_DIR$/fuel/app/views/pinball_rows.php" />
+        <option value="$PROJECT_DIR$/fuel/app/classes/model/record.php" />
+        <option value="$PROJECT_DIR$/fuel/app/views/pinball.php" />
+        <option value="$PROJECT_DIR$/fuel/app/classes/model/comparemoney.php" />
       </list>
     </option>
   </component>
@@ -135,8 +65,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="141" />
-    <option name="y" value="64" />
+    <option name="x" value="144" />
+    <option name="y" value="52" />
     <option name="width" value="1400" />
     <option name="height" value="986" />
   </component>
@@ -165,6 +95,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -411,8 +343,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -469,10 +399,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="141" y="64" width="1400" height="986" extended-state="0" />
+    <frame x="144" y="52" width="1400" height="986" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19587629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -523,63 +453,28 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fuel/app/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/pinball.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473327927452" expanded="true" signature="3178:3248" placeholder="SELECT `reco... ans" />
-            <marker date="1473327927452" expanded="true" signature="3216:3247" placeholder="SELECT MAX(`... ans" />
-            <marker date="1473327927452" expanded="true" signature="3442:3549" placeholder="SELECT `reco... ans" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball_ans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding>
-            <marker date="1473299932318" expanded="true" signature="139:402" placeholder="..." />
-            <marker date="1473299932318" expanded="true" signature="148:389" placeholder="..." />
-            <marker date="1473299932318" expanded="true" signature="411:526" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/record.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
           <folding>
             <element signature="e#24#45#0#PHP" expanded="true" />
-            <marker date="1473239066416" expanded="true" signature="3943:4062" placeholder="SELECT `reco... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4370" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4391" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4430" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4443" placeholder="SELECT * FRO... record " />
-            <marker date="1473239066416" expanded="true" signature="4392:4429" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415373852" expanded="true" signature="4206:4237" placeholder="SELECT `reco... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4452" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4473" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4512" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4548" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4561" placeholder="SELECT * FRO... record " />
+            <marker date="1473415373852" expanded="true" signature="4430:4573" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4590" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4474:4497" placeholder="SELECT MAX(`... " />
+            <marker date="1473415373852" expanded="true" signature="4474:4498" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415373852" expanded="true" signature="4474:4511" placeholder="SELECT MAX(`... record" />
           </folding>
         </state>
       </provider>
@@ -589,9 +484,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1473324548953" expanded="true" signature="7653:7662" placeholder="..." />
+            <marker date="1473415546513" expanded="true" signature="9463:9472" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -609,9 +502,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="193" column="20" selection-start-line="193" selection-start-column="20" selection-end-line="193" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1473324548953" expanded="true" signature="7653:7662" placeholder="..." />
+            <marker date="1473415546513" expanded="true" signature="9463:9472" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -621,9 +512,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1473327927452" expanded="true" signature="3178:3248" placeholder="SELECT `reco... ans" />
-            <marker date="1473327927452" expanded="true" signature="3216:3247" placeholder="SELECT MAX(`... ans" />
-            <marker date="1473327927452" expanded="true" signature="3442:3549" placeholder="SELECT `reco... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:491" placeholder="SELECT * FRO... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:524" placeholder="SELECT `ans_... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:549" placeholder="SELECT * FRO... ans" />
+            <marker date="1473413072659" expanded="true" signature="492:523" placeholder="SELECT MAX(`... ans" />
           </folding>
         </state>
       </provider>
@@ -641,12 +533,17 @@
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#24#45#0#PHP" expanded="true" />
-            <marker date="1473239066416" expanded="true" signature="3943:4062" placeholder="SELECT `reco... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4370" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4391" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4430" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4443" placeholder="SELECT * FRO... record " />
-            <marker date="1473239066416" expanded="true" signature="4392:4429" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415373852" expanded="true" signature="4206:4237" placeholder="SELECT `reco... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4452" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4473" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4512" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4548" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4561" placeholder="SELECT * FRO... record " />
+            <marker date="1473415373852" expanded="true" signature="4430:4573" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4590" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4474:4497" placeholder="SELECT MAX(`... " />
+            <marker date="1473415373852" expanded="true" signature="4474:4498" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415373852" expanded="true" signature="4474:4511" placeholder="SELECT MAX(`... record" />
           </folding>
         </state>
       </provider>
@@ -655,7 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,9 +605,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1473327927452" expanded="true" signature="3178:3248" placeholder="SELECT `reco... ans" />
-            <marker date="1473327927452" expanded="true" signature="3216:3247" placeholder="SELECT MAX(`... ans" />
-            <marker date="1473327927452" expanded="true" signature="3442:3549" placeholder="SELECT `reco... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:491" placeholder="SELECT * FRO... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:524" placeholder="SELECT `ans_... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:549" placeholder="SELECT * FRO... ans" />
+            <marker date="1473413072659" expanded="true" signature="492:523" placeholder="SELECT MAX(`... ans" />
           </folding>
         </state>
       </provider>
@@ -722,9 +618,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1473324548953" expanded="true" signature="7653:7662" placeholder="..." />
+            <marker date="1473415546513" expanded="true" signature="9463:9472" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -733,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,25 +738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball_rows.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36363637">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/record.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27272728">
-          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fuel/app/config/development/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18181819">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,41 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22727273">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball_ans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.296297">
-          <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
-          <folding>
-            <marker date="1473299932318" expanded="true" signature="139:402" placeholder="..." />
-            <marker date="1473299932318" expanded="true" signature="148:389" placeholder="..." />
-            <marker date="1473299932318" expanded="true" signature="411:526" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.444445">
-          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
-          <folding>
-            <marker date="1473303686313" expanded="true" signature="147:233" placeholder="SELECT * FRO... user" />
-            <marker date="1473303686313" expanded="true" signature="147:237" placeholder="SELECT * FRO... user" />
-            <marker date="1473303686313" expanded="true" signature="147:259" placeholder="SELECT * FRO... user" />
-            <marker date="1473303686313" expanded="true" signature="147:260" placeholder="SELECT * FRO... user" />
-            <marker date="1473303686313" expanded="true" signature="147:304" placeholder="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38636363">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.9772725">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,61 +763,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.181818">
           <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/record.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2222223">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-          <folding>
-            <element signature="e#24#45#0#PHP" expanded="true" />
-            <marker date="1473239066416" expanded="true" signature="3943:4062" placeholder="SELECT `reco... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4370" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4391" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4430" placeholder="SELECT * FRO... record" />
-            <marker date="1473239066416" expanded="true" signature="4348:4443" placeholder="SELECT * FRO... record " />
-            <marker date="1473239066416" expanded="true" signature="4392:4429" placeholder="SELECT MAX(`... record" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7636364">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.592594">
-          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1473324548953" expanded="true" signature="7653:7662" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fuel/app/views/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.703703">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="53" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/pinball.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.259259">
-          <caret line="16" column="49" selection-start-line="12" selection-start-column="7" selection-end-line="16" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -988,26 +782,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/game.php">
+    <entry file="file://$PROJECT_DIR$/fuel/app/tasks/game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-131.59259">
-          <caret line="187" column="34" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
+        <state vertical-scroll-proportion="-6.3333335">
+          <caret line="69" column="45" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="45" />
           <folding>
-            <marker date="1473327927452" expanded="true" signature="3178:3248" placeholder="SELECT `reco... ans" />
-            <marker date="1473327927452" expanded="true" signature="3216:3247" placeholder="SELECT MAX(`... ans" />
-            <marker date="1473327927452" expanded="true" signature="3442:3549" placeholder="SELECT `reco... ans" />
+            <marker date="1473386699342" expanded="true" signature="3237:3307" placeholder="SELECT * FRO... ans" />
+            <marker date="1473386699342" expanded="true" signature="3275:3306" placeholder="SELECT MAX(`... ans" />
+            <marker date="1473386699342" expanded="true" signature="3501:3608" placeholder="SELECT `ans_... ans" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fuel/app/tasks/game.php">
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5">
-          <caret line="97" column="49" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.4090909">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/tasks/compare_ans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3181818">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
           <folding>
-            <marker date="1473327957833" expanded="true" signature="3144:3214" placeholder="SELECT * FRO... ans" />
-            <marker date="1473327957833" expanded="true" signature="3182:3213" placeholder="SELECT MAX(`... ans" />
-            <marker date="1473327957833" expanded="true" signature="3408:3515" placeholder="SELECT `ans_... ans" />
+            <marker date="1473393356407" expanded="true" signature="828:865" placeholder="SELECT MAX(`... record" />
+            <marker date="1473393356407" expanded="true" signature="907:948" placeholder="SELECT * FRO... record" />
+            <marker date="1473393356407" expanded="true" signature="907:949" placeholder="SELECT * FRO... record" />
+            <marker date="1473393356407" expanded="true" signature="907:951" placeholder="SELECT * FRO... record" />
+            <marker date="1473393356407" expanded="true" signature="907:957" placeholder="SELECT * FRO... record" />
+            <marker date="1473393356407" expanded="true" signature="907:982" placeholder="SELECT * FRO... record" />
+            <marker date="1473393356407" expanded="true" signature="907:1014" placeholder="SELECT * FRO... record" />
+            <marker date="1473393356407" expanded="true" signature="1179:1246" placeholder="SELECT * FRO... ans" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3181818">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball_ans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18181819">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/pinball.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4318182">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/controller/record.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.555555">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16460396">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29545453">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <marker date="1473413072659" expanded="true" signature="434:491" placeholder="SELECT * FRO... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:524" placeholder="SELECT `ans_... ans" />
+            <marker date="1473413072659" expanded="true" signature="434:549" placeholder="SELECT * FRO... ans" />
+            <marker date="1473413072659" expanded="true" signature="492:523" placeholder="SELECT MAX(`... ans" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/record.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.409091">
+          <caret line="150" column="46" selection-start-line="150" selection-start-column="46" selection-end-line="150" selection-end-column="46" />
+          <folding>
+            <element signature="e#24#45#0#PHP" expanded="true" />
+            <marker date="1473415373852" expanded="true" signature="4206:4237" placeholder="SELECT `reco... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4452" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4473" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4512" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4548" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4561" placeholder="SELECT * FRO... record " />
+            <marker date="1473415373852" expanded="true" signature="4430:4573" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4430:4590" placeholder="SELECT * FRO... record" />
+            <marker date="1473415373852" expanded="true" signature="4474:4497" placeholder="SELECT MAX(`... " />
+            <marker date="1473415373852" expanded="true" signature="4474:4498" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415373852" expanded="true" signature="4474:4511" placeholder="SELECT MAX(`... record" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29545453">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <marker date="1473394520934" expanded="true" signature="147:233" placeholder="SELECT * FRO... user" />
+            <marker date="1473394520934" expanded="true" signature="147:237" placeholder="SELECT * FRO... user" />
+            <marker date="1473394520934" expanded="true" signature="147:259" placeholder="SELECT * FRO... user" />
+            <marker date="1473394520934" expanded="true" signature="147:260" placeholder="SELECT * FRO... user" />
+            <marker date="1473394520934" expanded="true" signature="147:304" placeholder="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball_rows.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022727273">
+          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4318182">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/views/pinball.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.681818">
+          <caret line="250" column="21" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="21" />
+          <folding>
+            <marker date="1473415546513" expanded="true" signature="9463:9472" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fuel/app/classes/model/comparemoney.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3409091">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <marker date="1473415546517" expanded="true" signature="217:264" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:265" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:271" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:272" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:280" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:297" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:298" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:310" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="217:362" placeholder="SELECT `bala... user" />
+            <marker date="1473415546517" expanded="true" signature="879:916" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415546517" expanded="true" signature="1024:1086" placeholder="SELECT * FRO... record" />
+            <marker date="1473415546517" expanded="true" signature="1224:1306" placeholder="SELECT * FRO... record" />
+            <marker date="1473415546517" expanded="true" signature="1268:1305" placeholder="SELECT MAX(`... record" />
+            <marker date="1473415546517" expanded="true" signature="1480:1553" placeholder="SELECT * FRO... ans" />
           </folding>
         </state>
       </provider>

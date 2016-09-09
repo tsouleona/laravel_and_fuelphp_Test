@@ -5,6 +5,8 @@ return array(
 	'index/logout' => 'index/logout',
 	'pinball/view' => 'Pinball/view',
 	'record/getRecord' => 'record/getRecord',
+	'record/getOldRecord' => 'record/getOneRecord',
 	'Pinball/getBall'   => 'Pinball/game',
 	'pinball/getTime'  => 'Pinball/getTime',
+	'compare/getAns' => 'compare/compareAns',
 );

@@ -9,9 +9,13 @@ class Controller_record extends Controller
 
         if($op)
         {
-            $data = array();
             $data['total'] = Record::selectAllRecord();
-            return View::forge('pinball_rows',$data);
+            return View::forge('pinball_rows', $data);
         }
+    }
+    public function action_getOneRecord()
+    {
+        $data['total'] = Record::selectAllRecord();
+        return View::forge('pinball_rows', $data);
     }
 }

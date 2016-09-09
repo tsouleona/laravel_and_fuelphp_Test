@@ -11,8 +11,7 @@ class User extends \Model
         if($result != null)
         {
             \Session::set('username', $data['username']);
-            \Session::set('balance', $result[0]['balance']);
-            return true;
+            return $result[0]['balance'];
         }
         return false;
     }

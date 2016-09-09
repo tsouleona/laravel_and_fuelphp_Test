@@ -1,3 +1,5 @@
+
+<?php if(isset($total[0]['record_id'])){?>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -20,3 +22,5 @@
         </tr>
     <?php }?>
 </table>
+<?php }?>
+
