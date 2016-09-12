@@ -4,6 +4,7 @@ use \Model\Game;
 
 class Controller_Pinball extends Controller
 {
+    //123
     public function action_view()
     {
         return View::forge('pinball');
