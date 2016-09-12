@@ -43,6 +43,18 @@ return array(
 		'6' => 0.05,
 		'7' => 0.02,
 	),
+	'ball' => array(
+		'1' => 2,
+		'2' => 10,
+		'3' => 20,
+		'4' => 80,
+		'5' => 80,
+		'6' => 80,
+		'7' => 80,
+		'8' => 20,
+		'9' => 10,
+		'10' => 2,
+	),
 	/**
 	 * base_url - The base URL of the application.
 	 * MUST contain a trailing slash (/)

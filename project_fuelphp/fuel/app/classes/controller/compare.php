@@ -7,7 +7,7 @@ class Controller_Compare extends Controller
     public function action_compareAns()
     {
         $result = CompareMoney::selectRecordNew($_POST['username'], $_POST['record']);
-        if($result != null)
+        if($result[0]['record_id'] != null)
         {
             CompareMoney::comcuteMoney($result);
             $result2 = CompareMoney::selectBalance($_POST['username'], $_POST['record']);

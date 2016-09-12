@@ -46,21 +46,24 @@
         </div>
     </div>
 
-    <script>
-    $.ajax({
-        url: '<?php echo Uri::create('record/getSomeRecord'); ?>',
-        datatype: 'html',
-        success: function (data) {
-            $("#compare").html(data);
-        }
-    });
-    </script>
-
     <div id="countball"></div>
+    <div id="OneAns"></div>
     <hr>
     <script>
         get_time();
         showAns();
+        function showTotalBall() {
+            $.ajax({
+                url: '<?php echo Uri::create('Pinball/getOneAns'); ?>',
+                type:'POST',
+                data:{record_id:$('#record').text()},
+                datatype: 'html',
+                success: function (data) {
+                    $("#OneAns").html(data);
+                }
+            });
+        }
+
         function showBalance() {
             $.ajax({
                url:'<?php echo Uri::create('index/getBalance'); ?>',
@@ -93,7 +96,14 @@
                 }
             });
         }
-
+        function create_ball() {
+            $.ajax({
+                url: '<?php echo Uri::create('Pinball/createBall');?>',
+                type: 'POST',
+                data: {total: $("#total").text(),record:$('#record').text()},
+                datatype: 'html'
+            });
+        }
         function get_time() {
             showAns();
             showBalance();
@@ -102,10 +112,13 @@
                 datatype: 'html',
                 success: function (data) {
                     var all_s = (data);
-                    if (all_s == 0) {
+                    if (all_s <= 0) {
                         document.getElementById("go").disabled = true;
-                        comcuteAns();
-                        setTimeout(get_time, 10000);//10秒後去重新要秒數
+                        $("#time").html('<h4>0' + '分' +'0' + '秒' + '</h4>');
+                        create_ball();
+                        setTimeout(comcuteAns,5000);
+                        showTotalBall();
+                        setTimeout(get_time, 5000);//10秒後去重新要秒數
                     }
                     else {
                         document.getElementById("go").disabled = false;
@@ -124,7 +137,7 @@
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                <th>[1] 1-5球道 猜牛奶球在哪？</th>
+                <th>[1] 猜牛奶球在哪？(milk)</th>
                 </thead>
 
                 <tr>
@@ -159,7 +172,7 @@
                 </thead>
                 <thead>
                 <tr>
-                    <th>單數區</th>
+                    <th>單數區(odd)</th>
                 </tr>
                 </thead>
                 <tr>
@@ -183,7 +196,7 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>雙數區</th>
+                    <th>雙數區(even)</th>
                 </tr>
                 </thead>
                 <tr>
@@ -207,18 +220,18 @@
             <table class="table table-bordered">
                 <thead>
 
-                <th>[3] 有可能連續進球喔！！</th>
+                <th>[3] 有可能連續進球喔！！<br>(continue_ball)</th>
 
                 </thead>
                 <thead>
                 <tr>
-                    <th>1、2、3、4</th>
-                    <th>2、3、4、5</th>
-                    <th>3、4、5、6</th>
-                    <th>4、5、6、7</th>
-                    <th>5、6、7、8</th>
-                    <th>6、7、8、9</th>
-                    <th>7、8、9、10</th>
+                    <th>1、2、3、4<br>(1號)</th>
+                    <th>2、3、4、5<br>(2號)</th>
+                    <th>3、4、5、6<br>(3號)</th>
+                    <th>4、5、6、7<br>(4號)</th>
+                    <th>5、6、7、8<br>(5號)</th>
+                    <th>6、7、8、9<br>(6號)</th>
+                    <th>7、8、9、10<br>(7號)</th>
                 </tr>
                 </thead>
                 <tr>
@@ -271,7 +284,7 @@
                     datatype: 'html'
                     ,
                     success: function (data) {
-                        $("#record_new").append(data);
+                        $("#recordShow").append(data);
                     }
                 });
             }
@@ -284,7 +297,6 @@
     <h4><strong>下注紀錄</strong>
         <h4>
             <hr>
-            <div id="record_new"></div>
             <div id="recordShow"></div>
 </div>
 <script>

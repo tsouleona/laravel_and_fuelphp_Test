@@ -152,5 +152,4 @@ class Record extends \Model
         $result = DB::query('SELECT * FROM `record` WHERE `record_id` = (SELECT MAX(`record_id`) FROM `record`) AND `username` = '."'".$username."'")->execute()->as_array();
         return $result;
     }
-
 }

@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo Uri::base(false); ?>css/bootstrap.css" rel="stylesheet">
 

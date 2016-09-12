@@ -10,5 +10,7 @@ return array(
 	'record/getSomeRecord' => 'record/getSomeRecord',
 	'Pinball/getBall'   => 'Pinball/game',
 	'pinball/getTime'  => 'Pinball/getTime',
+	'Pinball/getOneAns' => 'Pinball/selectOneAns',
+	'Pinball/createBall' => 'Pinball/createBall',
 	'compare/getAns' => 'compare/compareAns',
 );
