@@ -15,4 +15,4 @@
     <h4><strong>加碼3顆玻璃球還有1顆牛奶球喔！！有1顆牛奶球12顆玻璃球</strong></h4><br>
 <?php }?>
 
-<h4><strong><?php echo $ans;?></strong></h4>
+<h4><strong id="record"><?php echo $ans;?></strong></h4>

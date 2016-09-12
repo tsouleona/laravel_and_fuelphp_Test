@@ -11,18 +11,18 @@ class CompareMoney extends \Model
     public static function updateUser($money, $data)
     {
         $result = DB::query('SELECT `balance` FROM `user` WHERE `username` = ' . "'" . $data['username'] . "'")->execute()->as_array();
-        $getMoney = (float)$result[0]['balance'] - (float)$money;
+        $getMoney = (float)$result[0]['balance'] + (float)$money;
         $finalMoney = floor($getMoney);
         DB::update('user')->set(array(
             'balance' => $finalMoney
         ))->where('username', $data['username'])->execute();
     }
 
-    public static function comcuteblance($data)
+    public static function comcuteBlance($data)
     {
         $money = 0;
         for ($i = 0; $i < count($data); $i++) {
-            $money = $money + $data[$i]['get_money'];
+            $money = $money + (int)$data[$i]['get_money'];
         }
         return $money;
     }
@@ -34,10 +34,14 @@ class CompareMoney extends \Model
         $result = DB::query('SELECT * FROM `record` WHERE `record_id` = ' . "'" . $id2 . "'")->execute()->as_array();
         return $result;
     }
-
-    public static function selectRecordNew()
+    public static function selectBalance($username,$record)
     {
-        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = (SELECT MAX(`record_id`) FROM `record`)')->execute()->as_array();
+        $result = DB::query('SELECT `get_money` FROM `record` WHERE `record_id` = '."'".$record."'".' AND `username` = '."'".$username."'")->execute()->as_array();
+        return $result;
+    }
+    public static function selectRecordNew($username,$record)
+    {
+        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = '."'".$record."'".' AND `username` = '."'".$username."'")->execute()->as_array();
         return $result;
     }
 

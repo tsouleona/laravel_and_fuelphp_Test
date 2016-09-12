@@ -15,4 +15,9 @@ class User extends \Model
         }
         return false;
     }
+    public static function getBalance($username)
+    {
+        $balance = DB::query('SELECT `balance` FROM `user` WHERE `username` = '."'".$username."'")->execute()->as_array();
+        return $balance[0]['balance'];
+    }
 }

@@ -1,6 +1,7 @@
 <?php date_default_timezone_set('America/New_York'); ?>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>彈珠台</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo Uri::base(false); ?>css/bootstrap.css" rel="stylesheet">
@@ -14,7 +15,8 @@
         <a class="navbar-brand">彈珠台</a>
         <a class="navbar-brand"><?php echo \Session::get('username'); ?> 歡迎光臨</a>
         <input style="display:none" id="username" value="<?php echo \Session::get('username'); ?>"/>
-        <a class="navbar-brand">餘額: &nbsp;<?php echo $balance; ?></a>
+        <a class="navbar-brand">餘額</a>
+        <a class="navbar-brand"><div id="balance"><?php echo $balance; ?></div></a>
         <a class="navbar-brand" href="<?php echo Uri::create('index/logout'); ?>">登出</a>
     </nav>
 </div>
@@ -23,7 +25,7 @@
     <div class="row" style="text-align:center">
         <h4><strong>離休息時間還有</strong></h4>
         <div id="time"></div>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">比對結果</button>
+        <button  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">比對結果</button>
 
     </div>
     <hr>
@@ -43,12 +45,33 @@
             </div>
         </div>
     </div>
+
+    <script>
+    $.ajax({
+        url: '<?php echo Uri::create('record/getSomeRecord'); ?>',
+        datatype: 'html',
+        success: function (data) {
+            $("#compare").html(data);
+        }
+    });
+    </script>
+
     <div id="countball"></div>
     <hr>
     <script>
         get_time();
-        comcuteAns();
         showAns();
+        function showBalance() {
+            $.ajax({
+               url:'<?php echo Uri::create('index/getBalance'); ?>',
+               type:'POST',
+               data:{username:$("#username").val()},
+               datatype:'html',
+               success:function(data) {
+                   $("#balance").html(data);
+               }
+            });
+        }
         function showAns() {
             $.ajax({
                 url: '<?php echo Uri::create('Pinball/getBall'); ?>',
@@ -63,7 +86,7 @@
             $.ajax({
                 url: '<?php echo Uri::create('compare/getAns');?>',
                 type: 'POST',
-                data: {username: $("#username").val()},
+                data: {username: $("#username").val(),record:$('#record').text()},
                 datatype: 'html',
                 success: function (data) {
                     $("#compare").html(data);
@@ -72,16 +95,16 @@
         }
 
         function get_time() {
+            showAns();
+            showBalance();
             $.ajax({
                 url: '<?php echo Uri::create('pinball/getTime'); ?>',
                 datatype: 'html',
                 success: function (data) {
                     var all_s = (data);
-
                     if (all_s == 0) {
                         document.getElementById("go").disabled = true;
                         comcuteAns();
-                        showAns();
                         setTimeout(get_time, 10000);//10秒後去重新要秒數
                     }
                     else {
@@ -93,7 +116,6 @@
 
                         setTimeout(get_time, 1000);
                     }
-
                 }
             });
         }
@@ -108,7 +130,7 @@
                 <tr>
                     <?php for ($i = 1; $i < 6; $i++) { ?>
                         <td>第<?php echo $i; ?>道 下注：<input name="milk_money<?php echo $i; ?>"
-                                                          id="milk_money<?php echo $i; ?>" type="number" min="1000"
+                                                          id="milk_money<?php echo $i; ?>" type="number" min="0"
                                                           max="1000000" step="1000" value="0"/></td>
                     <?php } ?>
                 </tr>
@@ -230,7 +252,6 @@
         };
 
         $("#go").on("click", function () {
-
             var isPass = false;
             $("input[id*='money']").each(function () {
                 if ($(this).val() != 0) {
@@ -250,11 +271,10 @@
                     datatype: 'html'
                     ,
                     success: function (data) {
-                        $("#record").append(data);
+                        $("#record_new").append(data);
                     }
                 });
             }
-
         });
     </script>
     <br>
@@ -264,14 +284,15 @@
     <h4><strong>下注紀錄</strong>
         <h4>
             <hr>
-            <div id="record"></div>
+            <div id="record_new"></div>
+            <div id="recordShow"></div>
 </div>
 <script>
     $.ajax({
         url: '<?php echo Uri::create('record/getOldRecord'); ?>',
         datatype: 'html',
         success: function (data) {
-            $("#record").append(data);
+            $("#recordShow").append(data);
         }
     });
 </script>

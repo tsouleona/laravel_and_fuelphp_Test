@@ -18,6 +18,11 @@ class Controller_index extends Controller
         }
         return View::forge('login');
     }
+    public function action_getBalance()
+    {
+        $balance = User::getBalance($_POST['username']);
+        return $balance;
+    }
     public function action_logout()
     {
         \Session::destroy('username');
