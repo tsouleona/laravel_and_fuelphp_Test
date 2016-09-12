@@ -1,0 +1,4 @@
+fuel/app/logs/*
+.idea/*
+composer.lock
+composer.phar
