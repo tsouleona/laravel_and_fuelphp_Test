@@ -18,9 +18,9 @@ class Controller_record extends Controller
         $data['total'] = Record::selectAllRecord();
         return View::forge('pinball_rows', $data);
     }
-    public function action_getSomeRecord()
+    public function action_getNewRecord()
     {
-        $data['total'] = Record::selectAllRecord();
-        return View::forge('pinball_oldAns', $data);
+        $data['totalAns'] = Record::selectOneRecord($_POST['record_id']);
+        return View::forge('pinball_compare', $data);
     }
 }

@@ -7,10 +7,9 @@ return array(
 	'pinball/view' => 'Pinball/view',
 	'record/getRecord' => 'record/getRecord',
 	'record/getOldRecord' => 'record/getOneRecord',
-	'record/getSomeRecord' => 'record/getSomeRecord',
+	'record/getNewRecord' => 'record/getNewRecord',
 	'Pinball/getBall'   => 'Pinball/game',
 	'pinball/getTime'  => 'Pinball/getTime',
 	'Pinball/getOneAns' => 'Pinball/selectOneAns',
-	'Pinball/createBall' => 'Pinball/createBall',
 	'compare/getAns' => 'compare/compareAns',
 );

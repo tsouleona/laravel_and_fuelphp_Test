@@ -152,4 +152,10 @@ class Record extends \Model
         $result = DB::query('SELECT * FROM `record` WHERE `record_id` = (SELECT MAX(`record_id`) FROM `record`) AND `username` = '."'".$username."'")->execute()->as_array();
         return $result;
     }
+    public static function selectOneRecord($record_id)
+    {
+        $username = \Session::get('username');
+        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = '."'".$record_id."'".' AND `username` = '."'".$username."'")->execute()->as_array();
+        return $result;
+    }
 }

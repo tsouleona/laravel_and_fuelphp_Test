@@ -63,7 +63,18 @@
                 }
             });
         }
-
+        function showAnsAboutFiveMinusLater()
+        {
+            $.ajax({
+                url:'<?php echo Uri::create('record/getNewRecord'); ?>',
+                type:'POST',
+                data:{record_id:$("#record").val()},
+                datatype:'html',
+                success:function(data) {
+                    $("#compare").html(data);
+                }
+            });
+        }
         function showBalance() {
             $.ajax({
                url:'<?php echo Uri::create('index/getBalance'); ?>',
@@ -85,28 +96,8 @@
             });
         }
 
-        function comcuteAns() {
-            $.ajax({
-                url: '<?php echo Uri::create('compare/getAns');?>',
-                type: 'POST',
-                data: {username: $("#username").val(),record:$('#record').text()},
-                datatype: 'html',
-                success: function (data) {
-                    $("#compare").html(data);
-                }
-            });
-        }
-        function create_ball() {
-            $.ajax({
-                url: '<?php echo Uri::create('Pinball/createBall');?>',
-                type: 'POST',
-                data: {total: $("#total").text(),record:$('#record').text()},
-                datatype: 'html'
-            });
-        }
         function get_time() {
             showAns();
-            showBalance();
             $.ajax({
                 url: '<?php echo Uri::create('pinball/getTime'); ?>',
                 datatype: 'html',
@@ -115,18 +106,17 @@
                     if (all_s <= 0) {
                         document.getElementById("go").disabled = true;
                         $("#time").html('<h4>0' + '分' +'0' + '秒' + '</h4>');
-                        create_ball();
-                        setTimeout(comcuteAns,5000);
-                        showTotalBall();
-                        setTimeout(get_time, 5000);//10秒後去重新要秒數
+                        setTimeout(get_time, 10000);//10秒後去重新要秒數
+                        setTimeout(showTotalBall, 5000);
+                        showBalance();
+                        showAnsAboutFiveMinusLater();
                     }
                     else {
-                        document.getElementById("go").disabled = false;
                         all_s = all_s - 1;
                         var m = Math.floor(all_s / 60);//分
                         var s = all_s % 60;//秒
                         $("#time").html('<h4>' + m + '分' + s + '秒' + '</h4>');
-
+                        document.getElementById("go").disabled = false;
                         setTimeout(get_time, 1000);
                     }
                 }
