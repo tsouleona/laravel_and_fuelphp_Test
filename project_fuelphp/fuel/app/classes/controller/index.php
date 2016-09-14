@@ -9,7 +9,7 @@ class Controller_index extends Controller
      * 開啟登入頁面
      *
      * @return mixed
-     * 導頁
+     * 將值回傳至login顯示
      */
     public function action_index()
     {
@@ -20,7 +20,7 @@ class Controller_index extends Controller
      * 登入判斷有沒有這個人，並搜尋該對象的餘額
      *
      * @return mixed
-     * 導頁
+     * 將值回傳至pinball顯示
      */
     public function action_login()
     {
@@ -36,7 +36,7 @@ class Controller_index extends Controller
      * 搜尋該帳號的餘額
      *
      * @return mixed
-     * 導頁
+     * 回傳user的餘額
      */
     public function action_getBalance()
     {
@@ -46,8 +46,9 @@ class Controller_index extends Controller
 
     /**
      * 摧毀session
+     *
      * @return mixed
-     * 導頁
+     * 導頁至login
      */
     public function action_logout()
     {

@@ -1,46 +1,49 @@
 <?php
 
 namespace Model;
+
 use \fuel\core\DB;
+
 date_default_timezone_set('America/New_York');
 
 class CompareMoney extends \Model
 {
-    public static function selectRecordOldOne()
-    {
-        $id = $result = DB::query('SELECT MAX(`record_id`) FROM `record`')->execute()->as_array();
-        $id2 = (int)$id[0]['MAX(`record_id`)'] - 1;
-        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = ' . "'" . $id2 . "'")->execute()->as_array();
-        return $result;
-    }
-    public static function selectGetMoney($username,$record)
-    {
-        $result = DB::query('SELECT `get_money` FROM `record` WHERE `record_id` = '."'".$record."'".' AND `username` = '."'".$username."'")->execute()->as_array();
-        return $result;
-    }
-    public static function selectRecordNew($username,$record)
-    {
-        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = '."'".$record."'".' AND `username` = '."'".$username."'")->execute()->as_array();
-        return $result;
-    }
+    /**
+     *更新所有使用者的餘額
+     *
+     * @param $all_user_record 最新的下注資料（所有使用者）
+     */
     public static function updateUser($all_user_record)
     {
         $x = count($all_user_record);
-        for($i=0;$i<$x;$i++)
-        {
+        for ($i = 0; $i < $x; $i++) {
             $money = 0;
-            $balance = DB::query('SELECT `balance` FROM `user` WHERE `username` = '."'".$all_user_record[$i]['username']."'")->execute()->as_array();
-            $money = (int)$balance[0]['balance'] + (int)$all_user_record[$i]['get_money']."\n";
+            $balance = DB::query('SELECT `balance` FROM `user` WHERE `username` = ' . "'" . $all_user_record[$i]['username'] . "'")->execute()->as_array();
+            $money = (int)$balance[0]['balance'] + (int)$all_user_record[$i]['get_money'] . "\n";
             DB::update('user')->set(array(
                 'balance' => $money
             ))->where('username', $all_user_record[$i]['username'])->execute();
         }
     }
+
+    /**
+     * 搜尋所有最新下注紀錄（所有使用者）
+     *
+     * @param $record  最新期數
+     * @return mixed
+     * 回傳所有最新下注清單
+     */
     public static function selectNewRecord($record)
     {
-        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = '."'".$record."'")->execute()->as_array();
+        $result = DB::query('SELECT * FROM `record` WHERE `record_id` = ' . "'" . $record . "'")->execute()->as_array();
         return $result;
     }
+
+    /**
+     * 計算金額（所有最新下注）
+     *
+     * @param $data 最新的下注資料
+     */
     public static function comcuteMoney($data)
     {
         $countrow = count($data);
@@ -53,8 +56,10 @@ class CompareMoney extends \Model
 
         if ($result[0]['ball_total'] == 11 || $result[0]['ball_total'] == 14) {
             $milk = explode('/', $result[0]['milk_location']);
+        } else {
+            $milk[0] = $result[0]['milk_location'];
         }
-        $milk[0] = $result[0]['milk_location'];
+
 
         for ($f = 0; $f < $countrow; $f++) {
 
@@ -143,22 +148,49 @@ class CompareMoney extends \Model
         }
     }
 
-    public static function odd($input, $ball)
+    /**
+     * 比對奇數答案是否正確
+     *
+     * @param $input 球道
+     * @param $ball_total  所有球道總球數
+     * @return bool
+     * 對的話回傳true,錯的話回傳false
+     */
+    public static function odd($input, $ball_total)
     {
-        if ($ball[$input] == 1 || $ball[$input] == 3 || $ball[$input] == 5) {
+        if ($ball_total[$input] == 1 || $ball_total[$input] == 3 || $ball_total[$input] == 5) {
             return true;
         }
         return false;
     }
 
-    public static function even($input, $ball)
+    /**
+     * 比對偶數答案是否正確
+     *
+     * @param $input 球道
+     * @param $ball_total  所有球道總球數
+     * @return bool
+     * 對的話回傳true,錯的話回傳false
+     */
+    public static function even($input, $ball_total)
     {
-        if ($ball[$input] == 2 || $ball[$input] == 4 || $ball[$input] == 6) {
+        if ($ball_total[$input] == 2 || $ball_total[$input] == 4 || $ball_total[$input] == 6) {
+
             return true;
         }
+
         return false;
     }
 
+    /**
+     * 比對牛奶球是否正確
+     *
+     * @param $input 球道
+     * @param $ball_total 所有球道總球數
+     * @param $milk 牛奶球位置
+     * @return bool
+     * 對的話回傳true,錯的話回傳false
+     */
     public static function milk($input, $ball_total, $milk)
     {
         if ($ball_total == 11 || $ball_total == 14) {
@@ -171,53 +203,73 @@ class CompareMoney extends \Model
             }
         }
 
-
         return false;
     }
 
-    public static function continue_ball($record, $ansBall)
+    /**
+     * 比對連續球是否正確
+     *
+     * @param $input 哪種連續球
+     * @param $ball_total 所有球道球數
+     * @return bool
+     */
+    public static function continue_ball($input, $ball_total)
     {
-        switch ($record) {
+        switch ($input) {
             case 1:
-                if ($ansBall[1] == 0 || $ansBall[2] == 0 || $ansBall[3] == 0 || $ansBall[4] == 0) {
+                if ($ball_total[1] == 0 || $ball_total[2] == 0 || $ball_total[3] == 0 || $ball_total[4] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
             case 2:
-                if ($ansBall[2] == 0 || $ansBall[3] == 0 || $ansBall[4] == 0 || $ansBall[5] == 0) {
+                if ($ball_total[2] == 0 || $ball_total[3] == 0 || $ball_total[4] == 0 || $ball_total[5] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
             case 3:
-                if ($ansBall[3] == 0 || $ansBall[4] == 0 || $ansBall[5] == 0 || $ansBall[6] == 0) {
+                if ($ball_total[3] == 0 || $ball_total[4] == 0 || $ball_total[5] == 0 || $ball_total[6] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
             case 4:
-                if ($ansBall[4] == 0 || $ansBall[5] == 0 || $ansBall[6] == 0 || $ansBall[7] == 0) {
+                if ($ball_total[4] == 0 || $ball_total[5] == 0 || $ball_total[6] == 0 || $ball_total[7] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
             case 5:
-                if ($ansBall[5] == 0 || $ansBall[6] == 0 || $ansBall[7] == 0 || $ansBall[8] == 0) {
+                if ($ball_total[5] == 0 || $ball_total[6] == 0 || $ball_total[7] == 0 || $ball_total[8] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
             case 6:
-                if ($ansBall[6] == 0 || $ansBall[7] == 0 || $ansBall[8] == 0 || $ansBall[9] == 0) {
+                if ($ball_total[6] == 0 || $ball_total[7] == 0 || $ball_total[8] == 0 || $ball_total[9] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
             case 7:
-                if ($ansBall[7] == 0 || $ansBall[8] == 0 || $ansBall[9] == 0 || $ansBall[10] == 0) {
+                if ($ball_total[7] == 0 || $ball_total[8] == 0 || $ball_total[9] == 0 || $ball_total[10] == 0) {
+
                     return false;
                 }
+
                 return true;
                 break;
         }
