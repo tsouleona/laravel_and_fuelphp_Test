@@ -2,8 +2,9 @@
 namespace Fuel\Tasks;
 
 use \Model\Game;
-use\Model\CompareMoney;
-use \fuel\core\DB;
+use \Model\Ans;
+use \Model\Record;
+use \Model\user;
 
 date_default_timezone_set('America/New_York');
 
@@ -14,19 +15,18 @@ class Create
      */
     public function game()
     {
-        $new_ans = Game::selectNewPinball();
+        $new_ans = Ans::selectNewPinball();
         if (count($new_ans) != 0) {
 
             //輸出賽果
             $result = Game::getRandom($new_ans[0]['ball_total']);
-            Game::updateGamePinball($result, $new_ans[0]['ans_id']);
+            Ans::updateGamePinball($result, $new_ans[0]['ans_id']);
 
             //算金額
-            $result = CompareMoney::selectNewRecord($new_ans[0]['ans_id']);
+            $result = Record::selectNewRecord($new_ans[0]['ans_id']);
             if (count($result) != 0) {
-                CompareMoney::computeMoney($result);
-                $result2 = CompareMoney::selectNewRecord($new_ans[0]['ans_id']);
-                CompareMoney::updateUser($result2);
+                $result2  = Record::computeMoney($result);
+                user::updateUser($result2);
             }
         }
 

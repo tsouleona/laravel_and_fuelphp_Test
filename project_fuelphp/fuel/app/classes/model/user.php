@@ -35,4 +35,18 @@ class User extends \Model
         $balance = DB::query('SELECT `balance` FROM `user` WHERE `username` = '."'".$username."'")->execute()->as_array();
         return $balance[0]['balance'];
     }
+
+    /**
+     *更新所有使用者的餘額
+     *
+     * @param $all_user_record 最新的下注資料（所有使用者）
+     */
+    public static function updateUser($all_user_balance)
+    {
+        foreach($all_user_balance as $user_balance){
+            DB::update('user')->set(array(
+                'balance'=> $user_balance['balance'],
+            ))->where('username',$user_balance['username'])->execute();
+        }
+    }
 }

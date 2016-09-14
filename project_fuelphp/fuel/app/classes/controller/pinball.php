@@ -1,6 +1,7 @@
 <?php
 
 use \Model\Game;
+use \Model\Ans;
 
 class Controller_Pinball extends Controller
 {
@@ -35,8 +36,8 @@ class Controller_Pinball extends Controller
      */
     public function action_game()
     {
-        $result = Game::selectNewPinball();
-        if (count($result) != 0) {
+        $result = Ans::selectNewPinball();
+        if (count($result)) {
             $data['ans'] = $result[0]['ans_id'];
             $data['ball_total'] = $result[0]['ball_total'];
             return View::forge('pinball_ans', $data);
@@ -53,9 +54,9 @@ class Controller_Pinball extends Controller
      */
     public function action_selectOneAns()
     {
-        $result = Game::selectOnePinball();
+        $result = Ans::selectOnePinball();
 
-        if (count($result) != 0) {
+        if (count($result)) {
             $data['total'] = $result;
             return View::forge('pinball_total', $data);
         }

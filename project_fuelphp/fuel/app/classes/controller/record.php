@@ -41,7 +41,7 @@ class Controller_record extends Controller
     public function action_getNewRecord()
     {
         $result = Record::selectOneRecord();
-        if(count($result) != 0)
+        if(count($result))
         {
             $data['totalAns'] = $result;
             return View::forge('pinball_compare', $data);

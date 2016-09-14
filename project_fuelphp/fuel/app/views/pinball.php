@@ -104,8 +104,8 @@
                         $("#time").html('<h4>0' + '分' +'0' + '秒' + '</h4>');
                         setTimeout(get_time, 10000);//10秒後去重新要秒數
                         setTimeout(showTotalBall, 15000);
-                        showBalance();
-                        showAnsAboutFiveMinusLater();
+                        setTimeout(showBalance, 15000);
+                        setTimeout(showAnsAboutFiveMinusLater, 15000);
                     }
                     else {
                         all_s = all_s - 1;
