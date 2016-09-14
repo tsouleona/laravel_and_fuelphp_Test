@@ -1,4 +1,4 @@
-    <?php if($totalAns[0]['record_id'] != null) {?>
+    <?php if(count($totalAns) != 0) {?>
     <table class="table table-bordered">
         <thead>
         <tr>

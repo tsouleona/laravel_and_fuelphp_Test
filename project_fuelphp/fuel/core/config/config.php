@@ -134,7 +134,7 @@ return array(
 	 */
 	'language'           => 'en', // Default language
 	'language_fallback'  => 'en', // Fallback language when file isn't available for default language
-	'locale'             => 'en_US', // PHP set_locale() setting, null to not set
+	'locale'             => 'en_US.UTF-8', // PHP set_locale() setting, null to not set
 
 	/**
 	 * Internal string encoding charset

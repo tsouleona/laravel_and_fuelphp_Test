@@ -16,17 +16,25 @@ class Controller_Pinball extends Controller
     public function action_game()
     {
         $result = Game::selectAllPinball();
-        $data['ans'] = $result[0]['ans_id'];
-        $data['ball_total'] = $result[0]['ball_total'];
-        return View::forge('pinball_ans', $data);
+        if(count($result) != 0)
+        {
+            $data['ans'] = $result[0]['ans_id'];
+            $data['ball_total'] = $result[0]['ball_total'];
+            return View::forge('pinball_ans', $data);
+        }
+        $data['error'] = '新的開始，請稍後...';
+        return View::forge('pinball_error',$data);
     }
     public function action_selectOneAns()
     {
-        $result = Game::selectOnePinball($_POST['record_id']);
+        $result = Game::selectOnePinball();
+
         if(count($result) != 0)
         {
             $data['total'] = $result;
             return View::forge('pinball_total', $data);
         }
+        $data['error'] = '新的開始，請稍後...';
+        return View::forge('pinball_error',$data);
     }
 }

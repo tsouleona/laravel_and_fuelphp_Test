@@ -55,8 +55,6 @@
         function showTotalBall() {
             $.ajax({
                 url: '<?php echo Uri::create('Pinball/getOneAns'); ?>',
-                type:'POST',
-                data:{record_id:$('#record').text()},
                 datatype: 'html',
                 success: function (data) {
                     $("#OneAns").html(data);
@@ -67,8 +65,6 @@
         {
             $.ajax({
                 url:'<?php echo Uri::create('record/getNewRecord'); ?>',
-                type:'POST',
-                data:{record_id:$("#record").val()},
                 datatype:'html',
                 success:function(data) {
                     $("#compare").html(data);
@@ -107,7 +103,7 @@
                         document.getElementById("go").disabled = true;
                         $("#time").html('<h4>0' + '分' +'0' + '秒' + '</h4>');
                         setTimeout(get_time, 10000);//10秒後去重新要秒數
-                        setTimeout(showTotalBall, 5000);
+                        setTimeout(showTotalBall, 15000);
                         showBalance();
                         showAnsAboutFiveMinusLater();
                     }

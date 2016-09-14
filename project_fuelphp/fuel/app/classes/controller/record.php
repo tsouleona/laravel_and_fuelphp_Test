@@ -20,7 +20,13 @@ class Controller_record extends Controller
     }
     public function action_getNewRecord()
     {
-        $data['totalAns'] = Record::selectOneRecord($_POST['record_id']);
-        return View::forge('pinball_compare', $data);
+        $result = Record::selectOneRecord();
+        if(count($result) != 0)
+        {
+            $data['totalAns'] = $result;
+            return View::forge('pinball_compare', $data);
+        }
+        $data['error'] = '重新開始，沒有球局';
+        return View::forge('pinball_error', $data);
     }
 }

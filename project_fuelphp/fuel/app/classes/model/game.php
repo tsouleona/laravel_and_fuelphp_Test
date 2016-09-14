@@ -19,9 +19,9 @@
             $result = DB::query('SELECT `ans_id`,`ball_total` FROM `ans` WHERE `ans_id` = (SELECT MAX(`ans_id`) FROM `ans`)')->execute()->as_array();
             return $result;
         }
-        public  static function selectOnePinball($record_id)
+        public  static function selectOnePinball()
         {
-            $result = DB::query('SELECT * FROM `ans` WHERE `ans_id` = '."'".$record_id."'")->execute()->as_array();
+            $result = DB::query('SELECT * FROM `ans` ORDER BY `ans_id` DESC LIMIT 1,1')->execute()->as_array();
             return $result;
         }
 
