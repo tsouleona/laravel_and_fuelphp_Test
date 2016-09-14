@@ -18,21 +18,21 @@ class Create
         if (count($new_ans) != 0) {
 
             //輸出賽果
-            $result = Game::get_random($new_ans[0]['ball_total']);
-            Game::update_gamePinball($result, $new_ans[0]['ans_id']);
+            $result = Game::getRandom($new_ans[0]['ball_total']);
+            Game::updateGamePinball($result, $new_ans[0]['ans_id']);
 
             //算金額
             $result = CompareMoney::selectNewRecord($new_ans[0]['ans_id']);
             if (count($result) != 0) {
-                CompareMoney::comcuteMoney($result);
+                CompareMoney::computeMoney($result);
                 $result2 = CompareMoney::selectNewRecord($new_ans[0]['ans_id']);
                 CompareMoney::updateUser($result2);
             }
         }
 
         //創新局
-        $result = Game::get_Total();
-        Game::insert_gamePinball($result);
+        $result = Game::getTotal();
+        Game::insertGamePinball($result);
     }
 
 }

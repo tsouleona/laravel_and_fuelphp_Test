@@ -52,7 +52,7 @@ class Game extends \Model
      * @param $ball_location 球的位置資料
      * @param $ans_id
      */
-    public static function update_gamePinball($ball_location, $ans_id)
+    public static function updateGamePinball($ball_location, $ans_id)
     {
         $count = count($ball_location);
         for ($i = 1; $i < 11; $i++) {
@@ -104,12 +104,12 @@ class Game extends \Model
      * @return array
      * 回傳球的位置資料
      */
-    public static function get_random($ball_total)
+    public static function getRandom($ball_total)
     {
         $stack = [];
         for ($i = 1; $i < 11; $i++) {
             $pro = Config::get("ball.{$i}");
-            $stack = Game::push_ball($stack, $pro, $i);
+            $stack = Game::pushBall($stack, $pro, $i);
         }
         shuffle($stack);
         $random = [];
@@ -121,7 +121,7 @@ class Game extends \Model
         $check_ans = array_count_values($ans);
         foreach ($check_ans as $key => $value) {
             if ($value > 6) {
-                Game::get_random($ball_total);
+                Game::getRandom($ball_total);
             }
         }
         return $ans;
@@ -136,7 +136,7 @@ class Game extends \Model
      * @return mixed
      * 回傳推完的陣列
      */
-    public static function push_ball($stack, $count, $number)
+    public static function pushBall($stack, $count, $number)
     {
         $i = 0;
         while ($i < $count) {
@@ -152,21 +152,21 @@ class Game extends \Model
      * @return int
      * 回傳球數
      */
-    public static function get_Total()
+    public static function getTotal()
     {
         $number = rand() % 8 + 1;
         $option = rand() % 3 + 1;
         switch ($option) {
             case 1:
-                $total = Game::three_Commball($number);
+                $total = Game::threeCommBall($number);
                 return $total;
                 break;
             case 2:
-                $total = Game::one_Milkball($number);
+                $total = Game::oneMilkBall($number);
                 return $total;
                 break;
             case 3:
-                $total = Game::commball_Milkball($number);
+                $total = Game::commBallAndMilkBall($number);
                 return $total;
                 break;
         }
@@ -179,9 +179,9 @@ class Game extends \Model
      * @param $count
      * @throws \FuelException
      */
-    public static function insert_gamePinball($count)
+    public static function insertGamePinball($count)
     {
-        $ans_id = Game::select_SpecPinball();
+        $ans_id = Game::getNewAnsId();
         $date = date("Y-m-d H:i:s");
         DB::insert('ans')->columns(array(
             'ans_id',
@@ -202,7 +202,7 @@ class Game extends \Model
      * @return int|string
      * 回傳期數
      */
-    public static function select_SpecPinball()
+    public static function getNewAnsId()
     {
         $date = date("Ymd");
         $result = DB::query('SELECT `ans_id` FROM `ans` WHERE `ans_id` LIKE ' . "'" . '%' . $date . '%' . "'" . ' ORDER BY `ans_id` DESC')->execute();
@@ -221,7 +221,7 @@ class Game extends \Model
      * @return int
      * 回傳球數
      */
-    public static function three_Commball($number)
+    public static function threeCommBall($number)
     {
         $ans = rand() % 2 + 1;
         if ($number == $ans) {
@@ -239,7 +239,7 @@ class Game extends \Model
      * @return int
      * 回傳球數
      */
-    public static function one_Milkball($number)
+    public static function oneMilkBall($number)
     {
         $ans = rand() % 4 + 1;
         if ($number == $ans) {
@@ -257,7 +257,7 @@ class Game extends \Model
      * @return int
      * 回傳球數
      */
-    public static function commball_Milkball($number)
+    public static function commBallAndMilkBall($number)
     {
         $ans = rand() % 8 + 1;
         if ($number == $ans) {

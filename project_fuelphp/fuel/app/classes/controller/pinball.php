@@ -35,7 +35,7 @@ class Controller_Pinball extends Controller
      */
     public function action_game()
     {
-        $result = Game::selectAllPinball();
+        $result = Game::selectNewPinball();
         if (count($result) != 0) {
             $data['ans'] = $result[0]['ans_id'];
             $data['ball_total'] = $result[0]['ball_total'];

@@ -44,9 +44,9 @@ class CompareMoney extends \Model
      *
      * @param $data 最新的下注資料
      */
-    public static function comcuteMoney($data)
+    public static function computeMoney($data)
     {
-        $countrow = count($data);
+        $count_row = count($data);
         $result = DB::query('SELECT * FROM `ans` WHERE `ans_id` = ' . "'" . $data[0]['record_id'] . "'")->execute()->as_array();
 
         for ($m = 1; $m < 11; $m++) {
@@ -61,11 +61,11 @@ class CompareMoney extends \Model
         }
 
 
-        for ($f = 0; $f < $countrow; $f++) {
+        for ($f = 0; $f < $count_row; $f++) {
 
             if ($data[$f]['play_type'] == 'continue_ball') {
 
-                $op = CompareMoney::continue_ball($data[$f]['input'], $total);
+                $op = CompareMoney::continueBall($data[$f]['input'], $total);
                 $date = date("Y-m-d H:i:s");
                 if ($op) {
                     $getMoney = (float)$data[$f]['bet_money'] * (float)$data[$f]['odds'];
@@ -213,7 +213,7 @@ class CompareMoney extends \Model
      * @param $ball_total 所有球道球數
      * @return bool
      */
-    public static function continue_ball($input, $ball_total)
+    public static function continueBall($input, $ball_total)
     {
         switch ($input) {
             case 1:

@@ -1,7 +1,6 @@
 <?php
 
 use \Model\User;
-use \Model\Record;
 
 class Controller_index extends Controller
 {

@@ -22,7 +22,7 @@ class Record extends \Model
         $username = \Session::get('username');
         for ($i = 1; $i < 11; $i++) {
             if ($data["milk_money{$i}"] != '0') {
-                $odds = Record::compute_Milk($i);
+                $odds = Record::computeMilk($i);
                 DB::insert('record')->columns(array(
                     'record_id',
                     'username',
@@ -46,7 +46,7 @@ class Record extends \Model
         }
         for ($i = 1; $i < 11; $i++) {
             if ($data["odd_money{$i}"] != '0') {
-                $odds = Record::compute_OddEven();
+                $odds = Record::computeOddEven();
                 DB::insert('record')->columns(array(
                     'record_id',
                     'username',
@@ -70,7 +70,7 @@ class Record extends \Model
         }
         for ($i = 1; $i < 11; $i++) {
             if ($data["even_money{$i}"] != '0') {
-                $odds = Record::compute_OddEven();
+                $odds = Record::computeOddEven();
                 DB::insert('record')->columns(array(
                     'record_id',
                     'username',
@@ -94,7 +94,7 @@ class Record extends \Model
         }
         for ($i = 1; $i < 8; $i++) {
             if ($data["continue_money{$i}"] != '0') {
-                $odds = Record::compute_ContinueBall($i);
+                $odds = Record::computeContinueBall($i);
                 DB::insert('record')->columns(array(
                     'record_id',
                     'username',
@@ -127,7 +127,7 @@ class Record extends \Model
      * @return string
      * 回傳計算後的錢
      */
-    public static function compute_Milk($ball_truck)
+    public static function computeMilk($ball_truck)
     {
         $pro = Config::get("hole.{$ball_truck}");
 
@@ -142,7 +142,7 @@ class Record extends \Model
      * @return string
      * 回傳計算後的錢
      */
-    public static function compute_OddEven()
+    public static function computeOddEven()
     {
         $tmp = 1 / 0.5 * 0.92;
         $final = number_format($tmp, 2);
@@ -156,7 +156,7 @@ class Record extends \Model
      * @return string
      * 回傳計算後的錢
      */
-    public static function compute_ContinueBall($continue_balls_truck)
+    public static function computeContinueBall($continue_balls_truck)
     {
 
         $pro = Config::get("continue.{$continue_balls_truck}");
