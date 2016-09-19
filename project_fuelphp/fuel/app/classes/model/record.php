@@ -21,21 +21,19 @@ class Record extends \Model
         $record_id = Ans::selectNewAnsId();
         $username = \Session::get('username');
 
-        $query = DB::insert('record')->columns(array(
-            'record_id',
-            'username',
-            'play_type',
-            'input',
-            'bet_money',
-            'odds',
-            'create_time',
-            'update_time'
-        ));
-
         for ($i = 1; $i < 11; $i++) {
             if ($data["milk_money{$i}"] != '0') {
                 $odds = Record::computeMilk($i);
-                $query->values(array(
+                DB::insert('record')->columns(array(
+                    'record_id',
+                    'username',
+                    'play_type',
+                    'input',
+                    'bet_money',
+                    'odds',
+                    'create_time',
+                    'update_time'
+                ))->values(array(
                     $record_id,
                     $username,
                     "milk",
@@ -48,7 +46,16 @@ class Record extends \Model
             }
             if ($data["odd_money{$i}"] != '0') {
                 $odds = Record::computeOddEven();
-                $query->values(array(
+                DB::insert('record')->columns(array(
+                    'record_id',
+                    'username',
+                    'play_type',
+                    'input',
+                    'bet_money',
+                    'odds',
+                    'create_time',
+                    'update_time'
+                ))->values(array(
                     $record_id,
                     $username,
                     "odd",
@@ -61,7 +68,16 @@ class Record extends \Model
             }
             if ($data["even_money{$i}"] != '0') {
                 $odds = Record::computeOddEven();
-                $query->values(array(
+                DB::insert('record')->columns(array(
+                    'record_id',
+                    'username',
+                    'play_type',
+                    'input',
+                    'bet_money',
+                    'odds',
+                    'create_time',
+                    'update_time'
+                ))->values(array(
                     $record_id,
                     $username,
                     "even",
@@ -76,7 +92,16 @@ class Record extends \Model
         for ($i = 1; $i < 8; $i++) {
             if ($data["continue_money{$i}"] != '0') {
                 $odds = Record::computeContinueBall($i);
-                $query->values(array(
+                DB::insert('record')->columns(array(
+                    'record_id',
+                    'username',
+                    'play_type',
+                    'input',
+                    'bet_money',
+                    'odds',
+                    'create_time',
+                    'update_time'
+                ))->values(array(
                     $record_id,
                     $username,
                     "continue_ball",
