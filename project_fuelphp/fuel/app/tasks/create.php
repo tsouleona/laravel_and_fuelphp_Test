@@ -16,8 +16,7 @@ class Create
     public function game()
     {
         $new_ans = Ans::selectNewPinball();
-        if (count($new_ans) != 0) {
-
+        if ($new_ans) {
             //輸出賽果
             $result = Game::getRandom($new_ans[0]['ball_total']);
             Ans::updateGamePinball($result, $new_ans[0]['ans_id']);
@@ -29,10 +28,9 @@ class Create
                 user::updateUser($result2);
             }
         }
-
         //創新局
         $result = Game::getTotal();
-        Game::insertGamePinball($result);
+        Ans::insertGamePinball($result);
     }
 
 }

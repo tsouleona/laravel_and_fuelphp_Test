@@ -193,12 +193,8 @@ class Record extends \Model
         $count_row = count($data);
         $result = DB::query('SELECT * FROM `ans` WHERE `ans_id` = ' . "'" . $data[0]['record_id'] . "'")->execute()->as_array();
         $users = DB::query('SELECT * FROM `user`')->execute()->as_array();
-        $total = [];
-        for ($m = 1; $m < 11; $m++) {
-            $ball[$m] = explode('/', $result[0]["{$m}"]);
-            $total[$m] = (int)$ball[$m][0] + (int)$ball[$m][1] . " ";
-        }
-
+        $pinball = json_decode($result[0]['pinball_ans'], true);
+        $continue = json_decode($result[0]['continue_ans'], true);
         if ($result[0]['ball_total'] == 11 || $result[0]['ball_total'] == 14) {
             $milk = explode('/', $result[0]['milk_location']);
         } else {
@@ -208,8 +204,7 @@ class Record extends \Model
         for ($f = 0; $f < $count_row; $f++) {
             $date = date("Y-m-d H:i:s");
             if ($data[$f]['play_type'] == 'continue_ball') {
-                $op = Record::continueBall($data[$f]['input'], $total);
-                if ($op) {
+                if ($continue[$data[$f]['input']]) {
                     $getMoney = (float)$data[$f]['bet_money'] * (float)$data[$f]['odds'];
                     $finalMoney = floor($getMoney);
                     $status = 'win';
@@ -230,7 +225,7 @@ class Record extends \Model
                 }
             }
             if ($data[$f]['play_type'] == 'odd') {
-                $op3 = Record::odd($data[$f]['input'], $total);
+                $op3 = Record::odd($data[$f]['input'], $pinball);
 
                 if ($op3) {
                     $getMoney = (float)$data[$f]['bet_money'] * (float)$data[$f]['odds'];
@@ -242,7 +237,7 @@ class Record extends \Model
                 }
             }
             if ($data[$f]['play_type'] == 'even') {
-                $op4 = Record::even($data[$f]['input'], $total);
+                $op4 = Record::even($data[$f]['input'], $pinball);
                 if ($op4) {
                     $getMoney = (float)$data[$f]['bet_money'] * (float)$data[$f]['odds'];
                     $finalMoney = floor($getMoney);;
@@ -265,6 +260,7 @@ class Record extends \Model
         }
         return $tmp_users;
     }
+
     /**
      * 比對奇數答案是否正確
      *
@@ -323,74 +319,6 @@ class Record extends \Model
         return false;
     }
 
-    /**
-     * 比對連續球是否正確
-     *
-     * @param $input 哪種連續球
-     * @param $ball_total 所有球道球數
-     * @return bool
-     */
-    public static function continueBall($input, $ball_total)
-    {
-        switch ($input) {
-            case 1:
-                if ($ball_total[1] == 0 || $ball_total[2] == 0 || $ball_total[3] == 0 || $ball_total[4] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-            case 2:
-                if ($ball_total[2] == 0 || $ball_total[3] == 0 || $ball_total[4] == 0 || $ball_total[5] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-            case 3:
-                if ($ball_total[3] == 0 || $ball_total[4] == 0 || $ball_total[5] == 0 || $ball_total[6] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-            case 4:
-                if ($ball_total[4] == 0 || $ball_total[5] == 0 || $ball_total[6] == 0 || $ball_total[7] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-            case 5:
-                if ($ball_total[5] == 0 || $ball_total[6] == 0 || $ball_total[7] == 0 || $ball_total[8] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-            case 6:
-                if ($ball_total[6] == 0 || $ball_total[7] == 0 || $ball_total[8] == 0 || $ball_total[9] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-            case 7:
-                if ($ball_total[7] == 0 || $ball_total[8] == 0 || $ball_total[9] == 0 || $ball_total[10] == 0) {
-
-                    return false;
-                }
-
-                return true;
-                break;
-        }
-    }
     /**
      * 更新到紀錄表的下注得到的錢
      *

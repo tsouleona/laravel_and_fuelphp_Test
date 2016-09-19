@@ -100,29 +100,6 @@ class Game extends \Model
     }
 
     /**
-     * 新的一局(新增球數及期數)
-     *
-     * @param $count
-     * @throws \FuelException
-     */
-    public static function insertGamePinball($count)
-    {
-        $ans_id = Ans::getNewAnsId();
-        $date = date("Y-m-d H:i:s");
-        DB::insert('ans')->columns(array(
-            'ans_id',
-            'ball_total',
-            'create_time',
-            'update_time'
-        ))->values(array(
-            $ans_id,
-            $count,
-            $date,
-            $date
-        ))->execute();
-    }
-
-    /**
      * 加碼三顆普通球
      *
      * @param $number 隨機取的亂數
